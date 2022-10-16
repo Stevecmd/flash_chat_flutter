@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flash_chat_flutter/constants.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+
+
 
 class ChatScreen extends StatefulWidget {
   static String id = 'ChatScreen'; //static is a modifier, we are using it to modify the variable chat_screen
@@ -8,6 +11,29 @@ class ChatScreen extends StatefulWidget {
 }
 
 class _ChatScreenState extends State<ChatScreen> {
+  final _auth = FirebaseAuth.instance;
+  User loggedInUser;
+
+  @override
+  void initState() {
+    super.initState();
+
+    getCurrentUser();
+  }
+
+  void getCurrentUser() async{
+    try{
+    final user = await _auth.currentUser;
+    if (user != null){
+      loggedInUser = user;
+      print(loggedInUser.email);
+    } }
+        catch (e){
+      print(e);
+        }
+
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
