@@ -70,7 +70,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
               title: 'Register',
               colour: Colors.blueAccent,
               onPressed: () async {
-//Todo:Implement registration functionality
+//Implement registration functionality
 //               print(email);
 //               print(password);
               try {
