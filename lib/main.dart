@@ -6,13 +6,13 @@ import 'package:flash_chat_flutter/screens/registration_screen.dart';
 import 'package:flash_chat_flutter/screens/chat_screen.dart';
 
 
-void main() => runApp(FlashChat());
+// void main() => runApp(FlashChat());
 
-// void main() async {
-//   WidgetsFlutterBinding.ensureInitialized();
-//   await Firebase.initializeApp();
-//   runApp(FlashChat());
-// }
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
+  runApp(FlashChat());
+}
 
 class FlashChat extends StatelessWidget {
   @override
